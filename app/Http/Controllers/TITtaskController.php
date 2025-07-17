@@ -13,6 +13,13 @@ class TITtaskController extends Controller
 {
     use AuthorizesRequests;
 
+    protected $task;
+
+    public function __construct(TITtask $task,)
+    {
+        $this->task = $task;
+    }
+
     /**
      * Display a listing of the resource.
      */
