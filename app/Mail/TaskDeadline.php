@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class TaskAssignedMail extends Mailable
+class TaskDeadline extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -27,7 +27,7 @@ class TaskAssignedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Task Assigned successfully',
+            subject: 'Task Deadline Created',
         );
     }
 
@@ -37,7 +37,7 @@ class TaskAssignedMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.taskAssigned',
+            view: 'emails.deadline',
         );
     }
 
