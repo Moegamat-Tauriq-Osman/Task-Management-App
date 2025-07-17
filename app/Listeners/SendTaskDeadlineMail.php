@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\TaskCreated;
+use App\Events\TaskAssigned;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class SendTaskAssignedMail
+class SendTaskDeadlineMail
 {
     /**
      * Create the event listener.
@@ -19,7 +19,7 @@ class SendTaskAssignedMail
     /**
      * Handle the event.
      */
-    public function handle(TaskAssigned $event): void
+    public function handle(TaskDeadline $event): void
     {
         
     }
