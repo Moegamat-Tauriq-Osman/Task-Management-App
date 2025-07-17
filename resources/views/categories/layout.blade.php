@@ -4,11 +4,12 @@
   </x-slot>
 
   <x-alert />
-
+  @can('TIT-manage-categories')
   <div class="py-4 max-w-5xl mx-auto">
     <a href="{{ route('categories.create') }}">
       <x-button>Create Category</x-button>
     </a>
+    @endcan
 
     <div class="overflow-x-auto bg-white mt-4 rounded shadow">
       <table class="min-w-full">
