@@ -11,6 +11,13 @@ class TITcategoryController extends Controller
 {
     use AuthorizesRequests;
 
+    protected $category;
+
+    public function __construct(TITcategory $category)
+    {
+        $this->category = $category;
+    }
+
     /**
      * Display a listing of the categories.
      */
