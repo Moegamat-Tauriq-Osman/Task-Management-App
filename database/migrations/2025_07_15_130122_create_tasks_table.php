@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->foreignId('category_id')->constrained(table: 'categories');
             $table->foreignId('assigned_to')->constrained('users');
+            $table->enum('priority', ['Low', 'Medium', 'High'])->default('Medium');
             $table->enum('status', ['Pending', 'In Progress', 'Completed']);
             $table->dateTime('deadline');
             $table->timestamps();
