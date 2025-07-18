@@ -14,7 +14,6 @@ A dynamic web-based task management system built with Laravel. This application 
 - 📬 Email reminders on task creation (Mailpit integration)
 - 🔐 Authentication via Laravel Breeze
 - 📊 Dynamic dashboard based on user role
-- 🧪 Unit & Feature tests included
 - 📦 Seeded with test users and data
 
 ---
