@@ -70,7 +70,7 @@ class TITtaskController extends Controller
 
         TaskDeadline::dispatch($task);
 
-        return redirect()->route('tasks.index')->with('success', 'Task created successfully.');
+        return redirect()->route('tasks.store')->with('success', 'Task created successfully.');
     }
 
     /**
@@ -114,7 +114,7 @@ class TITtaskController extends Controller
 
         $task->update($validated);
 
-        return redirect()->route('tasks.layout')->with('success', 'Task updated successfully.');
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully.');
     }
 
     /**
@@ -129,6 +129,6 @@ class TITtaskController extends Controller
 
         $task->delete();
 
-        return redirect()->route('tasks.layout')->with('success', 'Task deleted successfully.');
+        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully.');
     }
 }

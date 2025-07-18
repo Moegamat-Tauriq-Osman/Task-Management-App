@@ -53,7 +53,7 @@ class TITcategoryController extends Controller
 
         TITcategory::create($request->only('name'));
 
-        return redirect()->route('categories.layout')->with('success', 'Category added.');
+        return redirect()->route('categories.store')->with('success', 'Category added.');
     }
 
     /**
@@ -85,7 +85,7 @@ class TITcategoryController extends Controller
 
         $category->update($request->only('name'));
 
-        return redirect()->route('categories.layout')->with('success', 'Category updated.');
+        return redirect()->route('categories.index')->with('success', 'Category updated.');
     }
 
     /**
@@ -100,6 +100,6 @@ class TITcategoryController extends Controller
 
         $category->delete();
 
-        return redirect()->route('categories.layout')->with('success', 'Category deleted.');
+        return redirect()->route('categories.index')->with('success', 'Category deleted.');
     }
 }

@@ -10,12 +10,6 @@
       @csrf
       @if(isset($task)) @method('PUT') @endif
 
-      @if(auth()->user()->role === 'Team Member' && isset($task))
-      <x-select name="status" label="Status"
-        :options="['Pending'=>'Pending','In Progress'=>'In Progress','Completed'=>'Completed']"
-        :selected="$task->status ?? ''" />
-      @else
-
       <x-input name="title" label="Title" :value="$task->title ?? ''" required />
       <x-text-area name="description" label="Description" :value="$task->description ?? ''" />
 
@@ -39,7 +33,6 @@
 
       <x-input type="date" name="deadline" label="Deadline"
         :value="isset($task) ? $task->deadline->format('Y-m-d') : ''" required />
-      @endif
 
       <div class="mt-4">
         <x-button>{{ isset($task) ? 'Update Task' : 'Create Task' }}</x-button>
