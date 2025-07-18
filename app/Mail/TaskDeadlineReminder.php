@@ -8,17 +8,21 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\TITtask;
 
-class TaskDeadline extends Mailable
+class TaskDeadlineReminder extends Mailable
 {
     use Queueable, SerializesModels;
+    use Queueable, SerializesModels;
+
+    public $task;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(TITtask $task)
     {
-        //
+        $this->task = $task;
     }
 
     /**
@@ -27,7 +31,7 @@ class TaskDeadline extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Task Deadline Created',
+            subject: 'Task Deadline Reminder',
         );
     }
 
@@ -37,7 +41,7 @@ class TaskDeadline extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.deadline',
+            markdown: 'emails.deadline',
         );
     }
 
@@ -49,5 +53,11 @@ class TaskDeadline extends Mailable
     public function attachments(): array
     {
         return [];
+    }
+
+    public function build()
+    {
+        return $this->subject('Task Deadline Reminder')
+                    ->markdown('emails.deadline');
     }
 }
