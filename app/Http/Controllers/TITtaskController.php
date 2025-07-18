@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\TITtask;
 use App\Models\TITcategory;
 use App\Models\User;
+use App\Events\TaskDeadline;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class TITtaskController extends Controller
@@ -65,9 +66,11 @@ class TITtaskController extends Controller
             ? $request->assigned_to
             : auth()->id();
 
-        TITtask::create($validated);
+        $task = TITtask::create($validated);
 
-        return redirect()->route('tasks.layout')->with('success', 'Task created successfully.');
+        TaskDeadline::dispatch($task);
+
+        return redirect()->route('tasks.index')->with('success', 'Task created successfully.');
     }
 
     /**
