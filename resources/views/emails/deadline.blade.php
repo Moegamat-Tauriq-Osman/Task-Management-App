@@ -3,8 +3,7 @@
 
 The deadline for the task **{{ $task->title }}** is due on **{{ \Carbon\Carbon::parse($task->deadline)->format('d M Y') }}**.
 
-Please ensure all work is completed on time.
+Thanks,
+<h3>Task Management</h3>
 
-Thanks,<br>
-{{ config('app.name') }}
 @endcomponent
