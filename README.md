@@ -59,15 +59,15 @@ php artisan key:generate
 # 6. Run migrations and seeders
 php artisan migrate --seed
 
-# 7. Start local server
+# 7. Start the local server
 php artisan serve
 
 
  ## 🧑‍💼 Guide: How to Use the Application
  ### 👥 User Roles
  - **Admin** - View, create, assign, and delete all tasks and categories - Manage users and monitor overall task activity
- - **Team Member** - View and manage only the tasks assigned to them
-- **Guest** - View-only access to their own assigned tasks (no edit or delete) ---
+ - **Team Member** - View, create, assign, and manage the tasks assigned to them
+- **Guest** - View, create, assign, and manage tasks. 
  ### 🔐 User Registration & Login - Register at: `/register` - Login at: `/login` - Laravel Breeze handles authentication securely ---
  ### 📋 Task Management - Create tasks from the dashboard: `/tasks/create`
 - Admins can assign tasks to specific team members - Set task **priority**, **deadline**, and **category**
