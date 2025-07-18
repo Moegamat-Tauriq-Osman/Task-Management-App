@@ -13,6 +13,29 @@ class TITtaskSeeder extends Seeder
      */
     public function run(): void
     {
-        TITtask::factory()->count(10)->create();
+        DB::table('tasks')->insert([
+            [
+                'title' => 'Design the landing page',
+                'description' => 'Initial layout for homepage',
+                'category_id' => 1,
+                'priority' => 'Medium',
+                'status' => 'Pending',
+                'assigned_to' => 2,
+                'deadline' => Carbon::now()->addDays(5),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Develop the landing page',
+                'description' => 'Homepage coding',
+                'category_id' => 2,
+                'priority' => 'High',
+                'status' => 'Pending',
+                'assigned_to' => 3,
+                'deadline' => Carbon::now()->addDays(5),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
     }
 }
