@@ -40,8 +40,6 @@ A dynamic web-based task management system built with Laravel. This application 
 - Mailpit (for email testing)
 
 ### Steps
-
-```bash
 # 1. Clone the repository
 git clone https://github.com/your-username/task-management-app.git
 cd task-management-app
@@ -82,8 +80,6 @@ php artisan serve
 
 ## 🧾 Additional Documentation Inside the Code
 
-To ensure clarity and maintainability, the following commenting practices have been used throughout the codebase:
-
 - **PHPDoc-style comments** (`/** */`)  
   Placed above all functions and classes to describe their purpose, parameters, return values, and any relevant annotations.
 
@@ -93,4 +89,3 @@ To ensure clarity and maintainability, the following commenting practices have b
 - **Inline comments** (`//`)  
   Found inside controllers, models, and seeders to provide context for business logic and explain critical operations or decisions.
 
-These practices help keep the codebase clean, understandable, and easy to maintain.
