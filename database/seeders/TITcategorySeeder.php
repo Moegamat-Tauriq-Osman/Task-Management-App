@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\TITcategory;
-use Faker\Guesser\Name;
 
 class TITcategorySeeder extends Seeder
 {
@@ -13,7 +12,16 @@ class TITcategorySeeder extends Seeder
      */
     public function run(): void
     {
-       TITcategory::factory()->count(12)->create();
-        
+        TITcategory::insert(
+            [
+                ['name' => 'Cybersecurity'],
+                ['name' => 'Software Development'],
+                ['name' => 'DevOps'],
+                ['name' => 'Database Management'],
+                ['name' => 'IT Support'],
+                ['name' => 'Project Management'],
+
+            ]
+        );
     }
 }
